@@ -1,0 +1,13 @@
+#cv-template{
+    display:none;
+}
+.imgpro{
+    border: 1px solid;
+    border-radius: 50%;
+    width: 200px;
+   
+}
+.bg{
+    background-color: rgb(109, 161, 234);
+    
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container" id="cv-form">
+     <h1 class="text-center my-3">Resume Generator</h1>
+      <div class="row">
+        <div class="col-md-6">
+           <h3>Personal Information</h3>
+           <div class="form-group">
+              <label for="nameField">Your Name</label>
+              <input type="text" id="nameField" placeholder="enter your full name" class="form-control"/>
+           </div>
+           <div class="form-group mt-2">
+             <label for="contactField">Your PhoneNo</label>
+             <input type="number" id="contactField" placeholder="enter your Number" class="form-control"/>
+           </div>
+           <div class="form-group mt-2">
+             <label for="addressField">Address</label>
+             <textarea rows="3" id="addressField" placeholder="enter your address" class="form-control"></textarea>
+           </div>
+           <p class="text-secondary my-3">Important Links</p>
+           <div class="form-group mt-2">
+             <label for="mailField">Mail Id</label>
+             <input type="email" id="mailField" placeholder="enter your mail id" class="form-control"/>
+           </div>
+           <div class="form-group mt-2">
+             <label for="fbField">Facebook</label>
+             <input type="text" id="fbField" placeholder="enter here" class="form-control"/>
+           </div>
+           <div class="form-group mt-2">
+             <label for="linkedField">Linked In</label>
+             <input type="text" id="linkedField" placeholder="enter here" class="form-control"/>
+           </div>
+
+        </div>
+        <div class="col-md-6">
+            <h3>Professional Information</h3>
+
+            <div class="form-group mt-2">
+               <label for="">Career Objective</label>
+               <textarea rows="3" id="objectiveField" placeholder="enter here" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group mt-2" id="ad">
+              <label for="">Work Experience</label>
+              <textarea rows="3"  placeholder="enter here" class="form-control weField"></textarea>
+              <div class="container text-center mt-3" id="weAddButton">
+                <button onclick="AddNewWEField()" class="btn btn-dark btn-sm">Add</button>
+              </div>
+            </div>
+
+            <div class="form-group mt-2" id="ad1">
+               <label for="">Academic Qualification</label>
+               <textarea rows="3"  placeholder="enter here" class="form-control eqField"></textarea>
+              <div class="container text-center mt-3" id="aqAddButton">
+                <button onclick="AddNewAQField()" class="btn btn-dark btn-sm">Add</button>
+              </div>
+            </div>
+        </div>
+
+      </div>
+      <div class="container text-center mt-3">
+        <button onclick="GenerateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+      </div>
+    </div>
+
+    <div class="container" id="cv-template">
+     <div class="row">
+
+      <div class="col-md-4 text-center py-3 bg">
+        <img src="https://t3.ftcdn.net/jpg/04/51/93/48/360_F_451934847_V7rc18Ibs9UNU5sSihQBY0MzSDgei4Cr.jpg" alt="" class="img-fluid imgpro">
+        <div class="container">
+          <p id="nameT1">Tabu Paramata</p>
+          <p id="contactT">+1234567899</p>
+          <p id="addressT">sector-3, 120/b,vsp</p>
+          <hr/>
+          <p><a id="gmT" href="#1">https://www.google.com</a></p>
+          <p><a id="fbT" href="#1">https://www.facebook.com</a></p>
+          <p><a  id="linkedT"href="#1">https://www.linkedin</a></p>
+          
+        </div>
+      </div>
+      <div class="col-md-8 py-3">
+         <h1 id="nameT2" class="text-center" style="font-weight: 980;">Tabu Paramata</h1>
+
+         <div class="card mt-4">
+           <div class="card-header bg-primary">
+             <h3>Career Objective</h3>
+           </div>
+           <div class="card-body">
+             <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur magni deserunt quas ducimus soluta ratione placeat minus totam aspernatur, minima id eius ipsa quia? Temporibus cupiditate doloremque ipsum deserunt soluta.</p>
+           </div>
+         </div>
+
+         <div class="card mt-4">
+           <div class="card-header bg-primary">
+             <h3>Work Experience</h3>
+           </div>
+           <div class="card-body">
+             <ul id="WeT">
+              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam!</li>
+              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam!</li>
+              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam!</li>
+             </ul>
+           </div>
+         </div>
+         <div class="card mt-4">
+           <div class="card-header bg-primary">
+             <h3>Academic Qualification</h3>
+           </div>
+           <div class="card-body">
+             <ul id="AqT">
+               <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam!</li>
+               <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam!</li>
+               <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, quisquam!</li>
+             </ul>
+           </div>
+         </div>
+          <div class="container mt-3 text-center">
+            <button onclick="PrintCV()" class="btn bg-primary">Print CV</button>
+          </div>
+     </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="./index.js"></script>
+</html>
